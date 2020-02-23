@@ -11,6 +11,11 @@
     list-style: none;
   }
 
+  a {
+    text-decoration: none;
+    color: unset;
+  }
+
   * {
     box-sizing: border-box;
   }

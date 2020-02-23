@@ -16,6 +16,7 @@ export default {
 
 <style lang="scss">
   .a-subtitle {
+    display: block;
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
     font-size: 16px;

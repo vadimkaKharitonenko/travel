@@ -21,6 +21,63 @@
     <button class="m-travel-card__submit">
       от {{new Intl.NumberFormat('ru-RU').format(price)}} ₽
     </button>
+
+    <div class="m-travel-card__divider">
+      <div class="circle"/>
+
+      <ul class="dots">
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+      </ul>
+
+      <div class="circle"/>
+    </div>
+
+    <div class="m-travel-card__divider">
+      <div class="circle"/>
+
+      <ul class="dots">
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+      </ul>
+
+      <div class="circle"/>
+    </div>
+
+    <div class="m-travel-card__divider">
+      <div class="circle"/>
+
+      <ul class="dots">
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+        <li />
+      </ul>
+
+      <div class="circle"/>
+    </div>
   </article>
 </template>
 
@@ -40,6 +97,11 @@ export default {
     tags: Array,
     price: Number,
   },
+  data() {
+    return {
+
+    };
+  },
 };
 
 </script>
@@ -51,7 +113,43 @@ export default {
     height: 209px;
     padding: 16px;
     border-radius: 8px;
-    overflow: hidden;
+
+    &__divider {
+      position: absolute;
+      top: -8px;
+      right: 47px;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      width: 16px;
+      height: 226px;
+      transition: .3s ease-in-out;
+
+      .circle {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background-color: var(--white);
+      }
+
+      .dots {
+        position: absolute;
+        top: 11px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(10, 1fr);
+        height: 215px;
+
+        li {
+          width: 4px;
+          height: 10px;
+          border-radius: 5px;
+          background-color: var(--white);
+        }
+      }
+    }
 
     &__submit {
       position: absolute;
@@ -80,7 +178,21 @@ export default {
       transition: .3s ease-in-out;
 
       &:hover {
+        top: 77px;
+        right: -80px;
+        width: 210px;
         background-color: var(--red);
+        transform: rotate(-89deg);
+
+        & + .m-travel-card__divider {
+          transform: skewX(-1deg);
+          right: 44px;
+        }
+
+        & ~ .m-travel-card__divider:nth-last-child(2) {
+          transform: skewX(-.5deg);
+          right: 45px;
+        }
       }
     }
 
@@ -149,6 +261,7 @@ export default {
     &__name {
       position: relative;
       z-index: 1;
+      max-width: 255px;
       margin-bottom: 8px;
       color: var(--white);
     }
