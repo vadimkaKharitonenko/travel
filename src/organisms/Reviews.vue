@@ -3,9 +3,8 @@
     <Heading
       tag='h3'
       :level="3"
-      text="Отзывы наших клиентов"
       className="o-reviews__title"
-    />
+    >Отзывы наших клиентов</Heading>
 
     <div class="o-reviews__items">
       <ReviewCard

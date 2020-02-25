@@ -3,9 +3,8 @@
     <Heading
       tag='h3'
       :level="3"
-      text="Предложения дня"
       className="o-day-deals__title"
-    />
+    >Предложения дня</Heading>
 
     <div class="o-day-deals__items">
       <TravelCard
@@ -42,6 +41,8 @@ export default {
 
 <style lang="scss">
   .o-day-deals {
+    margin: 60px 0 40px;
+
     &__title {
       margin-bottom: 40px;
     }

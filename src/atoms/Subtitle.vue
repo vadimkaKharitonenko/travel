@@ -1,5 +1,5 @@
 <template>
-  <span :class="'a-subtitle ' + className">{{text}}</span>
+  <span :class="'a-subtitle ' + className"><slot></slot></span>
 </template>
 
 <script>
@@ -7,7 +7,6 @@
 export default {
   name: 'Subtitle',
   props: {
-    text: String,
     className: String,
   },
 };

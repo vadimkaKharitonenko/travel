@@ -9,8 +9,8 @@
     <div class="m-review-card__info">
       <span class="m-review-card__user-name">{{name}}</span>
       <span class="m-review-card__user-date">{{date}}</span>
-      <Subtitle :text="title" className="m-review-card__subtitle" />
-      <Paragraph :text="description" className="m-review-card__description" />
+      <Subtitle className="m-review-card__subtitle">{{title}}</Subtitle>
+      <Paragraph className="m-review-card__description">{{description}}</Paragraph>
     </div>
   </article>
 </template>

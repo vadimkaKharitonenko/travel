@@ -9,7 +9,7 @@
         </li>
       </ul>
 
-      <Heading tag="h4" :level="4" className="m-travel-card__name" :text="name"/>
+      <Heading tag="h4" :level="4" className="m-travel-card__name">{{name}}</Heading>
 
       <ul class="m-travel-card__tags">
         <li class="tag" :key="tag" v-for="tag in tags">
@@ -131,7 +131,7 @@ export default {
         width: 16px;
         height: 16px;
         border-radius: 50%;
-        background-color: var(--white);
+        background-color: #E5E5E5;
       }
 
       .dots {
@@ -146,7 +146,7 @@ export default {
           width: 4px;
           height: 10px;
           border-radius: 5px;
-          background-color: var(--white);
+          background-color: #E5E5E5;
         }
       }
     }

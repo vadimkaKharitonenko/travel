@@ -11,6 +11,10 @@
     list-style: none;
   }
 
+  body {
+    background-color: #E5E5E5;
+  }
+
   a {
     text-decoration: none;
     color: unset;

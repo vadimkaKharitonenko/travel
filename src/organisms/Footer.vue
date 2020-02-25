@@ -1,5 +1,16 @@
 <template>
   <footer class="o-footer">
+    <div class="o-footer__subsciprition">
+      <div class="container">
+        <SubscriptionForm
+          title="Будьте в курсе новостей"
+          description="Подпишитесь на последние обновления, чтобы быть первым в курсе новостей"
+        />
+
+        <SideNews :articles="articles" />
+      </div>
+    </div>
+
     <div class="container">
       <div>
         <router-link to="/">
@@ -43,7 +54,7 @@
         </div>
       </div>
       <div>
-        <Subtitle text="Полезные ссылки" className="o-footer__subtitle" />
+        <Subtitle className="o-footer__subtitle">Полезные ссылки</Subtitle>
 
         <ul class="o-footer__useful-links">
           <li :key="link.name" v-for="link in usefulLinks">
@@ -57,9 +68,8 @@
           <Heading
             tag='h4'
             :level="4"
-            :text="phoneForIndividuals"
             className="o-footer__value"
-          />
+          >{{phoneForIndividuals}}</Heading>
         </a>
 
         <span class="o-footer__label">ГОРЯЧАЯ ЛИНИЯ 24 ЧАСА</span>
@@ -67,9 +77,8 @@
           <Heading
             tag='h4'
             :level="4"
-            :text="phoneHotLine"
             className="o-footer__value"
-          />
+          >{{phoneHotLine}}</Heading>
         </a>
       </div>
     </div>
@@ -80,18 +89,23 @@
 
 import Subtitle from '@/atoms/Subtitle.vue';
 import Heading from '@/atoms/Heading.vue';
+import SubscriptionForm from '@/organisms/SubscriptionForm.vue';
+import SideNews from '@/molecules/SideNews.vue';
 
 export default {
   name: 'Footer',
   components: {
     Subtitle,
     Heading,
+    SubscriptionForm,
+    SideNews,
   },
   props: {
     logo: String,
     usefulLinks: Array,
     phoneForIndividuals: String,
     phoneHotLine: String,
+    articles: Array,
   },
 };
 
@@ -99,12 +113,24 @@ export default {
 
 <style lang='scss'>
   .o-footer {
-    padding: 40px 0;
+    padding: 0 0 40px;
     background-color: var(--dark-blue);
 
     & > .container {
       display: grid;
       grid-template-columns: 397px 436px 1fr;
+    }
+
+    &__subsciprition {
+      margin-bottom: 40px;
+      background-color: #E6E6EA;
+
+      & > .container {
+        display: grid;
+        grid-template-columns: 674px 377px;
+        grid-column-gap: 120px;
+        align-items: center;
+      }
     }
 
     &__logo {

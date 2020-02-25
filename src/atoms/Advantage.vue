@@ -5,11 +5,10 @@
     <Heading
       tag='h4'
       :level="4"
-      :text="name"
       className="o-advantage__name"
-    />
+    >{{name}}</Heading>
 
-    <Paragraph :text="description" className="a-advantage__description" />
+    <Paragraph className="a-advantage__description">{{description}}</Paragraph>
   </article>
 </template>
 

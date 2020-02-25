@@ -1,5 +1,5 @@
 <template>
-  <div :is="tag" :class="'a-heading -level-' + level + ' ' + className">{{text}}</div>
+  <div :is="tag" :class="'a-heading -level-' + level + ' ' + className"><slot></slot></div>
 </template>
 
 <script>
@@ -10,7 +10,6 @@ export default {
   props: {
     tag: String,
     level: Number,
-    text: String,
     className: String,
   },
 };

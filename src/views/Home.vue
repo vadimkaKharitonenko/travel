@@ -2,10 +2,20 @@
   <main>
     <div class="container">
       <DayDeals :items="travelCards" />
+    </div>
 
+    <Advantages title="Почему выбирают нас" :items="advantages" />
+
+    <div class="container">
+      <Map
+        :title="map.title"
+        :img="map.img"
+        :link="map.link"
+      />
+    </div>
+
+    <div class="container">
       <Reviews title="Отзывы наших клиентов" :items="reviews" />
-
-      <Advantages title="Почему выбирают нас" :items="advantages" />
     </div>
 
     <Footer
@@ -13,6 +23,7 @@
       :usefulLinks="footer.usefulLinks"
       :phoneForIndividuals="footer.phoneForIndividuals"
       :phoneHotLine="footer.phoneHotLine"
+      :articles="footer.articles"
     />
   </main>
 </template>
@@ -22,6 +33,7 @@
 import Reviews from '@/organisms/Reviews.vue';
 import DayDeals from '@/organisms/DayDeals.vue';
 import Advantages from '@/organisms/Advantages.vue';
+import Map from '@/organisms/Map.vue';
 import Footer from '@/organisms/Footer.vue';
 
 import logo from '../assets/logo.svg';
@@ -47,16 +59,24 @@ import travelBg4 from '../assets/travel-card-4.png';
 import travelBg5 from '../assets/travel-card-5.png';
 import travelBg6 from '../assets/travel-card-6.png';
 
+import map from '../assets/map.png';
+
 export default {
   name: 'Home',
   components: {
     Reviews,
     DayDeals,
     Advantages,
+    Map,
     Footer,
   },
   data() {
     return {
+      map: {
+        title: '907 офисов в России',
+        img: map,
+        link: '/',
+      },
       reviews: [
         {
           avatar,
@@ -204,6 +224,18 @@ export default {
         ],
         phoneForIndividuals: '+7 (383) 249-24-98',
         phoneHotLine: '8 (800) 232-78-09',
+        articles: [
+          {
+            date: '27.01.2020',
+            name: 'Эксклюзивные турецкие отели Coral Travel получили награду Holidaycheck 2020',
+            link: '/',
+          },
+          {
+            date: '24.01.2020',
+            name: 'Важная информация об эпидемиологической ситуации КНР',
+            link: '/',
+          },
+        ],
       },
     };
   },

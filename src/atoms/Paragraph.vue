@@ -1,5 +1,5 @@
 <template>
-  <p :class="'a-paragraph ' + className">{{text}}</p>
+  <p :class="'a-paragraph ' + className"><slot></slot></p>
 </template>
 
 <script>
@@ -8,7 +8,6 @@ export default {
   name: 'Paragraph',
   components: {},
   props: {
-    text: String,
     className: String,
   },
 };
