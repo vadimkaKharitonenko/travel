@@ -1,0 +1,17 @@
+{
+  "name": "converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "importAll": "node colors.js && node typography.js && node icons.js",
+    "icons": "node icons.js",
+    "colors": "node colors.js",
+    "typography": "node typography.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
